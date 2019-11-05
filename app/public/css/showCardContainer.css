@@ -41,11 +41,18 @@
 }
 
 .showCard .desc {
+    font-size: 0.5em;
+    text-align: left;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding: 0.5em;
     grid-column: 1/ 4;
     grid-row: 2 / 3;
 }
 
 .showCard .meta {
+    font-size: 0.5em;
+    color: #888888;
     grid-column: 1 / 4;
     grid-row: 3 / 4;
 }

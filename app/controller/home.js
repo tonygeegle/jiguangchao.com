@@ -8,10 +8,6 @@ class HomeController extends Controller {
         // console.log(articles);
         await this.ctx.render('articleSnip.tpl', { articles });
     }
-
-    async picSnip() {
-        await this.ctx.render('picSnip.tpl');
-    }
 }
 
 module.exports = HomeController;

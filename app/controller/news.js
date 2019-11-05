@@ -16,6 +16,10 @@ class NewsController extends Controller {
         }
 
     }
+    async newsPicSnip() {
+        const newsList = this.ctx.app.cache;
+        await this.ctx.render('picSnip.tpl', { newsList });
+    }
 }
 
 module.exports = NewsController;

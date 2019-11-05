@@ -18,5 +18,5 @@ module.exports = app => {
     router.get('/articleList', controller.article.articleListPage);
     router.get('/editArticlePage', controller.article.editAritclePage);
     router.post('/upload', controller.article.create);
-    router.get('/picSnip', controller.home.picSnip);
+    router.get('/picSnip', controller.news.newsPicSnip);
 };
