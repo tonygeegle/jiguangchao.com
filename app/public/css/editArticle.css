@@ -1,0 +1,57 @@
+.editArticle {
+    text-align: left;
+    padding-left: 15%;
+}
+
+.editArticle div {
+    margin-top: 1.5em;
+    text-justify: auto;
+}
+
+.editArticle .id {
+    display: none;
+}
+
+
+/* .tag {
+    display: inline;
+} */
+
+.editArticle input {
+    height: 2.5em;
+}
+
+.editArticle input,
+.editArticle textarea {
+    width: 70%;
+}
+
+.editArticle .submit {
+    /* background-color: #4CAF50; */
+    /* Green */
+    width: 50%;
+    margin-bottom: 2em;
+    margin: 1em auto 1em auto;
+}
+
+
+/* .editArticle .upload {
+    text-align: left;
+    width: 70%;
+} */
+
+
+/* .editArticle #img {
+    width: calc(70%-118px);
+} */
+
+.editArticle .upload [type=file] {
+    /* display: inline-block; */
+    width: auto;
+    height: auto;
+}
+
+.editArticle .upload [type=checkbox] {
+    width: 1.5em;
+    height: 1.5em;
+}

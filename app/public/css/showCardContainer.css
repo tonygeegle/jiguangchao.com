@@ -1,0 +1,51 @@
+.showCardContainer {
+    display: grid;
+    margin-top: 30px;
+    grid-template-columns: repeat(auto-fill, 227px);
+    grid-template-rows: repeat(auto-fill, 227px);
+    gap: 30px;
+    padding-bottom: 30px;
+    place-content: space-evenly;
+    /* 条纹背景 */
+    /* background: repeating-linear-gradient(60deg, #fb3, #fb3 15px, #58a 0, #58a 30px); */
+}
+
+.showCard {
+    border: 1px solid gray;
+    display: grid;
+    width: 227px;
+    grid-template-rows: 150px 50px 25px;
+    grid-template-columns: repeat(3, fr);
+    text-align: center;
+    box-shadow: 10px 10px 10px #888888;
+    transition: all 0.3s ease;
+}
+
+
+/* .item:hover {
+    transform: scale(1.1);
+} */
+
+.showCard:hover {
+    transform: scale(1.07)
+}
+
+.showCard .img {
+    grid-column: 1 / 4;
+    grid-row: 1 / 2;
+}
+
+.showCard .img img {
+    width: 100%;
+    height: auto;
+}
+
+.showCard .desc {
+    grid-column: 1/ 4;
+    grid-row: 2 / 3;
+}
+
+.showCard .meta {
+    grid-column: 1 / 4;
+    grid-row: 3 / 4;
+}

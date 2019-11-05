@@ -1,0 +1,56 @@
+.snippCardContainer {
+    background: slategray;
+}
+
+.snippCard {
+    border-bottom: 1px solid lightgray;
+    border-left: 10px transparent;
+    border-right: 10px transparent;
+    display: grid;
+    width: 80%;
+    grid-template-rows: 4em 1fr 2em;
+    grid-template-columns: 225px 1fr;
+    place-items: center;
+    text-align: left;
+    padding-bottom: 5px;
+    margin: 2em auto 1em auto;
+}
+
+.snippCard .img {
+    grid-column: 1 / 2;
+    grid-row: 1 / 3;
+}
+
+.snippCard img {
+    width: 100%;
+    height: auto;
+}
+
+.snippCard .title {
+    width: 88%;
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+}
+
+.snippCard .digest {
+    width: 88%;
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+}
+
+.snippCard .timedesc {
+    width: 88%;
+    color: grey;
+    font-size: 0.9em;
+    grid-column: 1 / 2;
+    grid-row: 3 / 4;
+}
+
+.snippCard .meta {
+    width: 88%;
+    color: grey;
+    font-size: 0.9em;
+    grid-column: 2 / 3;
+    grid-row: 3 / 4;
+    text-align: center;
+}

@@ -1,0 +1,12 @@
+.articleContainer {
+    margin: auto;
+    width: 80%;
+    text-align: left;
+}
+
+.articleContainer pre {
+    /*控制代码不换行*/
+    width: auto;
+    white-space: pre;
+    word-wrap: normal;
+}
