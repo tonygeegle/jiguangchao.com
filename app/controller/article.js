@@ -12,25 +12,28 @@ class Articletroller extends Controller {
     }
 
     async articleSnipPage() {
+        const user = this.ctx.user;
         const articles = await this.ctx.service.article.getAll();
         // console.log(articles);
-        await this.ctx.render('articleSnip.tpl', { articles });
+        await this.ctx.render('articleSnip.tpl', { articles, user });
     }
 
     async articleListPage() {
+        const user = this.ctx.user;
         const articles = await this.ctx.service.article.getAll();
         // console.log(articles);
-        await this.ctx.render('articleList.tpl', { articles });
+        await this.ctx.render('articleList.tpl', { articles, user });
     }
 
     async editAritclePage() {
         const id = this.ctx.query.id;
+        const user = this.ctx.user;
         if (id) {
 
             try {
                 // 好像就算id在数据库中匹配不到，返回的结果也不为空, 直接throw一个error
                 const article = await this.ctx.service.article.get(id);
-                await this.ctx.render('editArticle.tpl', { article });
+                await this.ctx.render('editArticle.tpl', { article, user });
             } catch (error) {
                 // 404 not find!
                 this.ctx.status = 404;
@@ -39,7 +42,8 @@ class Articletroller extends Controller {
 
         } else {
             await this.ctx.render('editArticle.tpl', {
-                article: { _id: '' }
+                article: { _id: '' },
+                user
             });
         }
 
@@ -47,11 +51,12 @@ class Articletroller extends Controller {
 
     async showArticle() {
         const id = this.ctx.query.id;
+        const user = this.ctx.user;
         // 对id进行校验
         try {
             // 好像就算id在数据库中匹配不到，返回的结果也不为空, 直接throw一个error
             const article = await this.ctx.service.article.get(id);
-            await this.ctx.render('article.tpl', { article });
+            await this.ctx.render('article.tpl', { article, user });
         } catch (error) {
             // 404 not find!
             console.log(error);

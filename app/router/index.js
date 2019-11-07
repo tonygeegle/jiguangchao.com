@@ -5,6 +5,7 @@
  */
 module.exports = app => {
     const { router, controller } = app;
+    const auth = app.middleware.auth({});
     // 挂载鉴权路由
     app.passport.mount('github');
     // 上面的 mount 是语法糖，等价于
@@ -17,9 +18,9 @@ module.exports = app => {
     router.get('/picSnip', controller.news.newsPicSnip);
     router.get('/news', controller.news.news);
     router.get('/article', controller.article.showArticle);
-    // 下面三个路由需要鉴权
-    router.get('/logOut', controller.user.logOut);
-    router.get('/articleList', controller.article.articleListPage);
-    router.get('/editArticlePage', controller.article.editAritclePage);
-    router.post('/upload', controller.article.create);
+    // 下面路由需要鉴权
+    router.get('/logout', auth, controller.user.logout);
+    router.get('/articleList', auth, controller.article.articleListPage);
+    router.get('/editArticlePage', auth, controller.article.editAritclePage);
+    router.post('/upload', auth, controller.article.create);
 };
