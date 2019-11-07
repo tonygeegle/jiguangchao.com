@@ -1,0 +1,33 @@
+.login {
+    /*控制代码不换行*/
+    max-width: 60%;
+    margin: 6em auto 22em auto;
+    text-align: left;
+}
+
+.login fieldset {
+    /* color: gray; */
+    border: 1px solid lightgray;
+}
+
+.login .auth {
+    text-align: center;
+}
+
+.login a {
+    display: inline-block;
+    width: 6em;
+    height: 3em;
+    padding: 0.5em;
+    text-align: center;
+    text-decoration: none;
+    color: black;
+    background-color: transparent;
+    transition: all 0.2s ease;
+}
+
+.login a:hover {
+    color: white;
+    background: green;
+    transform: scale(1.2)
+}

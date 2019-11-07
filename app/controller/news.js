@@ -5,6 +5,9 @@ const Controller = require('egg').Controller;
 class NewsController extends Controller {
 
     async news() {
+        // if (this.ctx.isAuthenticated()) {
+        //     console.log(JSON.stringify(this.ctx.user, null, 2));
+        // }
         const post_id = this.ctx.query.post_id;
         const newsList = this.ctx.app.cache;
         if (post_id) {

@@ -10,3 +10,8 @@
     white-space: pre;
     word-wrap: normal;
 }
+
+.articleContainer img {
+    /*控制代码不换行*/
+    max-width: 60%;
+}

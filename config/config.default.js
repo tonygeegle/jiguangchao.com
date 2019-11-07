@@ -16,7 +16,7 @@ module.exports = appInfo => {
     config.keys = appInfo.name + '_1571707057727_4043';
 
     // add your middleware config here
-    config.middleware = [];
+    config.middleware = ['auth'];
     // add config.view  ---TonyGee
     config.view = {
         defaultViewEngine: 'nunjucks',

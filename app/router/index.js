@@ -12,11 +12,14 @@ module.exports = app => {
     // router.get('/passport/github', github);
     // router.get('/passport/github/callback', github);
     router.get('/', controller.news.news);
+    router.get('/loginPage', controller.user.loginPage);
     router.get('/articleSnip', controller.article.articleSnipPage);
+    router.get('/picSnip', controller.news.newsPicSnip);
     router.get('/news', controller.news.news);
     router.get('/article', controller.article.showArticle);
+    // 下面三个路由需要鉴权
+    router.get('/logOut', controller.user.logOut);
     router.get('/articleList', controller.article.articleListPage);
     router.get('/editArticlePage', controller.article.editAritclePage);
     router.post('/upload', controller.article.create);
-    router.get('/picSnip', controller.news.newsPicSnip);
 };

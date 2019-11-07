@@ -48,7 +48,6 @@ class AppBootHook {
         // });
         console.log('serverDidReady');
         await this.app.runSchedule('news_cache');
-
     }
 }
 

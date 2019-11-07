@@ -12,6 +12,10 @@ module.exports = {
             dataType: 'json',
         })
         res.data && console.log(`共获取到${res.data.length}条数据！`);
+        // console.log('index     id       autor    content');
+        // res.data.forEach((e, index) => {
+        //     console.log(`${index}    ${e.post_id}  ${e.from_id}       ${e.content.length}`);
+        // });
         ctx.app.cache = res.data;
     },
 };
