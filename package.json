@@ -1,5 +1,5 @@
 {
-    "name": "blog-jiguangchao.com",
+    "name": "jiguangchao.com",
     "version": "1.0.0",
     "description": "",
     "private": true,
@@ -32,8 +32,8 @@
         "node": ">=10.0.0"
     },
     "scripts": {
-        "start": "egg-scripts start --daemon --title=egg-server-blog-jiguangchao.com",
-        "stop": "egg-scripts stop --title=egg-server-blog-jiguangchao.com",
+        "start": "egg-scripts start --daemon --title=egg-server-jiguangchao.com",
+        "stop": "egg-scripts stop --title=egg-server-jiguangchao.com",
         "dev": "egg-bin dev",
         "debug": "egg-bin debug",
         "test": "npm run lint -- --fix && npm run test-local",
