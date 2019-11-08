@@ -19,6 +19,8 @@ $ open http://localhost:7001/
 ### Deploy
 
 ```bash
+$ npm i egg-scripts --save #if nessary
+$ npm install --production
 $ npm start
 $ npm stop
 ```
