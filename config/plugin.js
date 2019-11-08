@@ -21,6 +21,5 @@ module.exports = {
     passportGithub: {
         enable: true,
         package: 'egg-passport-github',
-        proxy: true,
     }
 };

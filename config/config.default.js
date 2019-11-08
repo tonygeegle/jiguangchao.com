@@ -48,8 +48,10 @@ module.exports = appInfo => {
     config.passportGithub = {
         key: '7163a116cdbacc2d56f7',
         secret: '54b3756c98b79025e98ff155ee35599f3a1802ed',
-        // callbackURL: '/passport/github/callback',
-        // proxy: false,
+        // nginx做代理的生产环境使用下面配置
+        // callbackURL: 'https://www.jiguangchao.com/passport/github/callback',
+        // proxy: true,
+        // dev环境可以不用配置callbackURL,默认为 http://localhost:7001/passport/github/callback
     };
 
     // add your user config here
