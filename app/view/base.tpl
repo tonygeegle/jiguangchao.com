@@ -22,20 +22,23 @@
                     <a href="/articleSnip"><i class="fa fa-html5" style="font-size:24px"></i>&nbsp编程</a>
                     <a href="/picSnip"><i class="fa fa-etsy" style="font-size:20px"></i>&nbsp卡片</a>
                     {% if user %}
-                    <div class="userinfo"  style="color:white">
+                    <div class="dropdown">
+                        <a class="userinfo">
                             <img src="{{ user.photo }}"  width="25" height="25">
-                            <a style="display:inline-block"> {{ user.displayName }}</a>
-
+                            <span> {{ user.displayName }}</span>
+                        </a>
+                        <div class="dropdown-content">
+                            <a href="/articleList">文章管理</a>
+                            <a href="/editArticlePage">新建文章</a>
+                            <a href="/logout" style="color:red">退出登录</a>
+                        </div>
                     </div>
-                    <a href="/articleList">文章管理</a>
-                    <a href="/editArticlePage">新建文章</a>
-                    <a href="/logout">logout</a>
                     {% else %}
                             <a href="/loginPage"><i class="fa fa-sign-in" style="font-size:22px"></i>&nbsp 登陆</a>
                     {% endif %}    
-                    
-                    {# <a href="/"><i class="fa fa-user-o" style="font-size:22px"></i>&nbsp Me</a> #}
-                    <a class="endOfBar" href="#"><i class="fa fa-question-circle-o" style="font-size:22px"></i></a>
+    
+                    <a  class="endOfBar" href="/"><i class="fa fa-question-circle-o" style="font-size:22px"></i>&nbsp About Me</a>
+                    {# <a class="endOfBar" href="#">关于本站&nbsp<i class="fa fa-question-circle-o" style="font-size:22px"></i></a> #}
                 </div>
             {% endblock %}
          </div>
