@@ -15,6 +15,7 @@ module.exports = app => {
     router.get('/', controller.news.news);
     router.get('/loginPage', controller.user.loginPage);
     router.get('/articleSnip', controller.article.articleSnipPage);
+    router.get('/articlePicSnip', controller.article.articlePicSnipPage);
     router.get('/picSnip', controller.news.newsPicSnip);
     router.get('/news', controller.news.news);
     router.get('/article', controller.article.showArticle);

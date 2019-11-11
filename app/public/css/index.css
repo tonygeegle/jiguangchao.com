@@ -33,7 +33,7 @@ body {
 
 .item {
     /* font-size: 1em; */
-    text-align: center;
+    /* text-align: center; */
     /* line-height: 100px; */
 }
 
@@ -142,4 +142,22 @@ body {
     position: absolute;
     top: 50%;
     transform: translate(0, -50%); */
+}
+
+#displayType {
+    margin-top: 12px;
+    padding-left: 2em;
+}
+
+#displayType a {
+    padding: 3px;
+    color: black;
+    text-decoration: none;
+    border-radius: 12%;
+}
+
+#displayType a:hover,
+#displayType .active {
+    color: white;
+    background: green;
 }

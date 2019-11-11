@@ -11,7 +11,7 @@ module.exports = {
         package: 'egg-view-nunjucks'
     },
     mongoose: {
-        enable: false,
+        enable: true,
         package: 'egg-mongoose',
     },
     passport: {

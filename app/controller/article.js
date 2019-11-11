@@ -8,14 +8,24 @@ const uuidV1 = require('uuid/v1');
 
 class Articletroller extends Controller {
     constructor(ctx) {
-        super(ctx)
+        super(ctx);
+        // tags为传给模板可用的url参数，用来在显示内容列表上面进行切换显示或者筛选类别
+        this.tags = [{ name: '列表', url: '/articleSnip' }, { name: '卡片', url: '/articlePicSnip' }]
     }
 
     async articleSnipPage() {
         const user = this.ctx.user;
+        const tags = this.tags;
         const articles = await this.ctx.service.article.getAll();
         // console.log(articles);
-        await this.ctx.render('articleSnip.tpl', { articles, user });
+        await this.ctx.render('articleSnip.tpl', { articles, user, tags });
+    }
+    async articlePicSnipPage() {
+        const user = this.ctx.user;
+        const tags = this.tags;
+        const articles = await this.ctx.service.article.getAll();
+        // console.log(articles);
+        await this.ctx.render('aritclePicSnip.tpl', { articles, user, tags });
     }
 
     async articleListPage() {

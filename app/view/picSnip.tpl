@@ -2,7 +2,7 @@
 {% block head %} 
     {{ super() }}
     <link rel="stylesheet" href="public/css/showCardContainer.css">
-    <title>卡片展示----姬广超的个人网站</title>
+    <title>新闻卡片----姬广超的个人网站</title>
 {% endblock %} 
 {% block main %}
     <div class="showCardContainer">
