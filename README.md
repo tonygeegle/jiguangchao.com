@@ -17,7 +17,7 @@
 ##### 本网站GitHub地址：https://github.com/tonygeegle/jiguangchao.com
 
 ---
-##如果你也想使用本网站作为自己的个人网站，请进行以下步骤进行部署
+## 如果你也想使用本网站作为自己的个人网站，请进行以下步骤进行部署
 ## 请先自行安装MongoDB
 ## QuickStart
 
