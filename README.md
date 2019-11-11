@@ -1,7 +1,7 @@
 # jiguangchao.com
 
 
-
+## 请先自行安装MongoDB
 ## QuickStart
 
 <!-- add docs here for user -->
