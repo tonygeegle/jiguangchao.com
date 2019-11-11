@@ -57,6 +57,8 @@ body {
 }
 
 .footer {
+    text-align: center;
+    line-height: 150px;
     background-color: #333;
     color: white;
     height: 150px;

@@ -1,6 +1,23 @@
 # jiguangchao.com
 
 
+### 关于我
+* 全栈开发，熟练掌握Vue、React、Nodejs技术栈；熟悉antd、elementUI等前端组件库，精通koa、egg.js后端框架；熟练掌握html/css的原生应用。
+* python 爬虫，python web，python小工具，对python的异步、高阶函数、装饰器有较深入理解；java/C 也会，好久不用了。
+* Excel VBA插件开发，mysql/oracle SQL编写，ETL进行经营数据统计分析。
+* 网络运维、网络布置、做网线；SecureCrt脚本开发、linux系统运维、各种装系统；企业级路由器/交换机配置、按键精灵...修暖气片，疏通下水道...
+* 英语狂热爱好者，精通新概念英语，对英语教学、语法、美式发音有较深入了解。
+* 篮球爱好者，打篮球喊我！
+* 事业编、公考报考以及学习指导、结构化面试陪练。
+##### [email：253106788@qq.com]
+---
+
+### 关于本网站
+本网站前端纯原生开发，采用了比较传统的SSR后端渲染技术；为了锻炼自己的写原生的能力，目前连jquery都没有使用；后端采用了阿里的egg.js框架以及egg生态下的各种插件，如nunjucks(模板引擎)、passport(第三方登录认证)；数据库使用了MongoDB
+##### 本网站GitHub地址：https://github.com/tonygeegle/jiguangchao.com
+
+---
+##如果你也想使用本网站作为自己的个人网站，请进行以下步骤进行部署
 ## 请先自行安装MongoDB
 ## QuickStart
 

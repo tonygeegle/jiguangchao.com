@@ -80,7 +80,7 @@
             {% block main %} {# 这里将会替换成子模板的内容 #} {% endblock %}
         </div>
         {% block footer %}
-        <div class="footer item">footer</div>
+        <div class="footer item">Copyright @ 2019 www.jiguangchao.com 鲁ICP备19013735号-1</div>
         {% endblock %}
     </div>
 

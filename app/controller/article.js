@@ -100,7 +100,9 @@ class Articletroller extends Controller {
         const { ctx } = this
         const user = this.ctx.user;
         if (user.id != '13158980') {
+            this.ctx.status = 401;
             this.ctx.body = `<h2>没有权限!<h2/>`;
+            return;
         }
         // articleObj为最后要保存到数据库中的结果
         let articleObj = null;
