@@ -12,7 +12,7 @@ module.exports = app => {
     // const github = app.passport.authenticate('github', {});
     // router.get('/passport/github', github);
     // router.get('/passport/github/callback', github);
-    router.get('/', controller.news.news);
+    router.get('/', controller.home.index);
     router.get('/loginPage', controller.user.loginPage);
     router.get('/articleSnip', controller.article.articleSnipPage);
     router.get('/articlePicSnip', controller.article.articlePicSnipPage);
