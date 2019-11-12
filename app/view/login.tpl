@@ -12,7 +12,7 @@
             <div class="auth">
                 <h3>目前只支持GitHub登陆</h3>
                 <a href="/passport/github"><i class="fa fa-github" style="font-size:2.5em"></i></a>
-                <a href="/passport/github"><i class="fa fa-weibo" style="font-size:2.5em"></i></a>
+                <a href="/passport/weibo"><i class="fa fa-weibo" style="font-size:2.5em"></i></a>
                 <a href="/passport/github"><i class="fa fa-weixin" style="font-size:2.5em"></i></a>
                 <a href="/passport/github"><i class="fa fa-qq" style="font-size:2.5em"></i></a>
             </div>

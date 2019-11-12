@@ -8,6 +8,7 @@ module.exports = app => {
     const auth = app.middleware.auth({});
     // 挂载第三方鉴权路由
     app.passport.mount('github');
+    app.passport.mount('weibo');
     // 上面的 mount 是语法糖，等价于
     // const github = app.passport.authenticate('github', {});
     // router.get('/passport/github', github);

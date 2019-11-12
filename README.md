@@ -17,15 +17,17 @@
 ##### 本网站GitHub地址：https://github.com/tonygeegle/jiguangchao.com
 
 ---
-## 如果你也想使用本网站作为自己的个人网站，请进行以下步骤进行部署
-## 请先自行安装MongoDB
-## QuickStart
+#### what's next?
+##### 下一步将全力进行app和小程序的开发，以及学习一下区块链技术。
+##### 如果你也想使用本网站作为自己的个人网站，请进行以下步骤进行部署
+##### 请先自行安装MongoDB
+##### QuickStart
 
 <!-- add docs here for user -->
 
 see [egg docs][egg] for more detail.
 
-### Development
+##### Development
 
 ```bash
 $ npm i
@@ -33,7 +35,7 @@ $ npm run dev
 $ open http://localhost:7001/
 ```
 
-### Deploy
+##### Deploy
 
 ```bash
 $ npm i egg-scripts --save #if nessary
@@ -42,12 +44,12 @@ $ npm start
 $ npm stop
 ```
 
-### npm scripts
+##### npm scripts
 
 - Use `npm run lint` to check code style.
 - Use `npm test` to run unit test.
 - Use `npm run autod` to auto detect dependencies upgrade, see [autod](https://www.npmjs.com/package/autod) for more detail.
-### nginx配置如下，否则第GitHub登陆出错
+##### nginx配置如下，否则第GitHub登陆出错
 ```nginx
 server {
 listen 443 ssl;

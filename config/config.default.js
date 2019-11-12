@@ -53,6 +53,11 @@ module.exports = appInfo => {
         // proxy: true,
         // dev环境可以不用配置callbackURL,默认为 http://localhost:7001/passport/github/callback
     };
+    config.passportWeibo = {
+        key: '3815753422',
+        secret: '844a737ee2d1ca96b896fdcb0e0a81d3',
+        // callbackURL: '/passport/weibo/callback',
+    };
 
     // add your user config here
     const userConfig = {

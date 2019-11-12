@@ -21,5 +21,9 @@ module.exports = {
     passportGithub: {
         enable: true,
         package: 'egg-passport-github',
-    }
+    },
+    passportWeibo: {
+        enable: true,
+        package: 'egg-passport-weibo',
+    },
 };
