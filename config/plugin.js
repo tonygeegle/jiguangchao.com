@@ -23,4 +23,8 @@ module.exports = {
         package: 'egg-passport-github',
         proxy: true,
     }
+    passportWeibo: {
+        enable: true,
+        package: 'egg-passport-weibo',
+    },
 };
