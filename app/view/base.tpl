@@ -36,7 +36,7 @@
                 <a href="/loginPage"><i class="fa fa-sign-in" style="font-size:22px"></i>&nbsp 登陆</a> 
                 {% endif %}
 
-                <a class="endOfBar" href="/"><i class="fa fa-question-circle-o" style="font-size:22px"></i>&nbsp About Me</a> {# <a class="endOfBar" href="#">关于本站&nbsp<i class="fa fa-question-circle-o" style="font-size:22px"></i></a> #}
+                <a class="endOfBar" href="/about"><i class="fa fa-question-circle-o" style="font-size:22px"></i>&nbsp About Me</a> {# <a class="endOfBar" href="#">关于本站&nbsp<i class="fa fa-question-circle-o" style="font-size:22px"></i></a> #}
             </div>
             {% endblock %}
         </div>

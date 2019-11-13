@@ -14,6 +14,7 @@ module.exports = app => {
     // router.get('/passport/github', github);
     // router.get('/passport/github/callback', github);
     router.get('/', controller.home.index);
+    router.get('/about', controller.home.about);
     router.get('/loginPage', controller.user.loginPage);
     router.get('/articleSnip', controller.article.articleSnipPage);
     router.get('/articlePicSnip', controller.article.articlePicSnipPage);
