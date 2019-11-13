@@ -99,7 +99,7 @@ class Articletroller extends Controller {
     async create() {
         const { ctx } = this
         const user = this.ctx.user;
-        if (user.id != '13158980') {
+        if (user.id != '13158980' || user.id != '15698761') {
             this.ctx.status = 401;
             this.ctx.body = `<h2>没有权限!<h2/>`;
             return;

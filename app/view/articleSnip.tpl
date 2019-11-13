@@ -13,7 +13,7 @@
                         {% if item.img %}
                             <img src="{{ item.img }}"  width="300" height="200">
                         {% else %}
-                            <img src="https://www.runoob.com/wp-content/uploads/2016/04/img_forest.jpg" alt="Forest" width="300" height="200">
+                            <img src="/public/uploads/8661af70-05c0-11ea-9ea4-2f4461f08fbd.jpg" alt="default img" width="300" height="200">
                         {% endif %}              
                     </a>
                 </div>
