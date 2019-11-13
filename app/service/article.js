@@ -4,7 +4,7 @@ class ArticleService extends Service {
     async getAll() {
         // console.log(this.ctx.model);
         // 注意下面的Article开头字母为大写。坑死！！！
-        return await this.ctx.model.Article.find({});
+        return await this.ctx.model.Article.find({}).sort({ createdAt: -1 });
     }
     async get(id) {
         if (id) {
