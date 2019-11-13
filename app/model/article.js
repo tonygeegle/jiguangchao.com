@@ -6,6 +6,7 @@ module.exports = app => {
         // _id： MongoDB自己生成
         title: String,
         author: { type: String, default: '姬广超' },
+        author_id: String,
         category: { type: String, default: '未分类' },
         img: String,
         digest: String,
@@ -18,6 +19,7 @@ module.exports = app => {
             favs: { type: Number, default: 0 }
         }
     }, {
+        // 下面设置后将自动添加 createAt 和 updateAt 字段
         timestamps: true
     });
     const Article = mongoose.model("Article", ArticleSchema);

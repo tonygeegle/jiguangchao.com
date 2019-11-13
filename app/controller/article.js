@@ -147,8 +147,8 @@ class Articletroller extends Controller {
         try {
             // 校验字段
             // ............
-            // 直接保存或者更新到数据库
-            await this.ctx.service.article.save(articleObj);
+            // 补充user信息，直接保存或者更新到数据库
+            await this.ctx.service.article.save({...articleObj, 'author': user.displayName, 'author_id': user.id });
         } catch (error) {
             this.ctx.body = `<h2>error<h2/>`;
         }
