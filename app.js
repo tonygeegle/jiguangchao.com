@@ -1,4 +1,5 @@
 // app.js
+const assert = require('assert');
 class AppBootHook {
     constructor(app) {
         this.app = app;
@@ -46,7 +47,22 @@ class AppBootHook {
         // this.app.server.on('timeout', socket => {
         //     // handle socket timeout
         // });
-        console.log('serverDidReady');
+        console.log('ServerDidReady');
+        // 设置处理用户登录的回调方法
+        this.app.passport.verify(async(ctx, user) => {
+            // 检查用户
+            assert(user.provider, 'user.provider should exists');
+            assert(user.id, 'user.id should exists');
+            console.log('app.passport.verify');
+            const existsUser = await ctx.model.User.findOne({ id: user.id });
+            if (existsUser) {
+                return existsUser;
+            }
+            // 调用 service 注册新用户
+            const newUser = await ctx.service.user.register(user);
+            return user;
+        });
+        // 强制运行定时任务
         await this.app.runSchedule('news_cache');
     }
 }
