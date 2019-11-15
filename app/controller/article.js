@@ -99,11 +99,13 @@ class Articletroller extends Controller {
     async create() {
         const { ctx } = this
         const user = this.ctx.user;
-        if (user.id != '13158980' || user.id != '15698761') {
-            this.ctx.status = 401;
-            this.ctx.body = `<h2>没有权限!<h2/>`;
-            return;
-        }
+        console.log('in article create', user);
+
+        // if (user.id != '13158980' && user.id != '15698761') {
+        //     this.ctx.status = 401;
+        //     this.ctx.body = `<h2>id=${user.id}没有权限!<h2/>`;
+        //     return;
+        // }
         // articleObj为最后要保存到数据库中的结果
         let articleObj = null;
         // 要通过 ctx.getFileStream 便捷的获取到用户上传的文件，需要满足两个条件：

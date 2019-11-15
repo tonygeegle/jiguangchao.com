@@ -53,13 +53,16 @@ class AppBootHook {
             // 检查用户
             assert(user.provider, 'user.provider should exists');
             assert(user.id, 'user.id should exists');
-            console.log('app.passport.verify');
+            // console.log('in app.passport.verify');
             const existsUser = await ctx.model.User.findOne({ id: user.id });
             if (existsUser) {
                 return existsUser;
             }
-            // 调用 service 注册新用户
-            const newUser = await ctx.service.user.register(user);
+            // 调用 service 注册新用户(把用户信息保存到数据库)
+            await ctx.service.user.register(user);
+            // 这里想这样写：return await ctx.model.User.findOne({ id: user.id }); 
+            // 可能是因为异步的原因 return 得不到查询的结果。
+            // 反正就是：数据库插入一条记录之后，紧接着进行find该记录操作拿不到结果。具体问题以后在说吧。
             return user;
         });
         // 强制运行定时任务

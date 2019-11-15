@@ -5,7 +5,10 @@
  */
 module.exports = app => {
     const { router, controller } = app;
+    // auth中间件验证用户是否登录
     const auth = app.middleware.auth({});
+    // admin中间件验证用户是否登录且具有管理权限
+    const admin = app.middleware.admin({});
     // 挂载第三方鉴权路由
     app.passport.mount('github');
     app.passport.mount('weibo', { callbackURL: 'https://www.jiguangchao.com/passport/weibo/callback' });
@@ -24,6 +27,7 @@ module.exports = app => {
     // 下面路由需要鉴权
     router.get('/logout', auth, controller.user.logout);
     router.get('/articleList', auth, controller.article.articleListPage);
+    router.get('/userList', auth, controller.user.userListPage);
     router.get('/editArticlePage', auth, controller.article.editAritclePage);
-    router.post('/upload', auth, controller.article.create);
+    router.post('/upload', admin, controller.article.create);
 };

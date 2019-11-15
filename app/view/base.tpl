@@ -29,6 +29,7 @@
                     <div class="dropdown-content">
                         <a href="/articleList">文章管理</a>
                         <a href="/editArticlePage">新建文章</a>
+                        <a href="/userList">用户管理</a>
                         <a href="/logout" style="color:red">退出登录</a>
                     </div>
                 </div>

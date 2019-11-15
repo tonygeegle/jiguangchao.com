@@ -15,5 +15,6 @@ module.exports = app => {
         timestamps: true
     });
     const User = mongoose.model("User", UserSchema);
+    //mongo cmd > db.users.update({},{$set:{'grade':9}})
     return User;
 }
