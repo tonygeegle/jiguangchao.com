@@ -29,5 +29,6 @@ module.exports = app => {
     router.get('/articleList', auth, controller.article.articleListPage);
     router.get('/userList', auth, controller.user.userListPage);
     router.get('/editArticlePage', auth, controller.article.editAritclePage);
+    router.post('/comment', auth, controller.comment.create);
     router.post('/upload', admin, controller.article.create);
 };

@@ -62,22 +62,22 @@
                         <a href="{{ tag.url }}">{{ tag.name }}</a>
                     {% endfor %}
                 </div>
-            {% endif %}
-            <script>
-                // 获取当前页面的URL
-                var curPath = window.location.href;
-                console.log(curPath);
-                // arry是一个元素为 <a> 数组
-                var arry = document.getElementById('displayType').getElementsByTagName('a');
-                for (var i = 0; i < arry.length; i++) {
-                    console.log(arry[i].href);
-                    if (arry[i].href === curPath) {
-                        arry[i].classList.add('active')
-                    } else {
-                        arry[i].classList.remove("active");
+                <script>
+                    // 获取当前页面的URL
+                    var curPath = window.location.href;
+                    console.log(curPath);
+                    // arry是一个元素为 <a> 数组
+                    var arry = document.getElementById('displayType').getElementsByTagName('a');
+                    for (var i = 0; i < arry.length; i++) {
+                        console.log(arry[i].href);
+                        if (arry[i].href === curPath) {
+                            arry[i].classList.add('active')
+                        } else {
+                            arry[i].classList.remove("active");
+                        }
                     }
-                }
-            </script>
+                </script>
+            {% endif %}
             {% block main %} {# 这里将会替换成子模板的内容 #} {% endblock %}
         </div>
         {% block footer %}
