@@ -7,7 +7,8 @@
 {% block main %}
     <div class="editArticle">
         <form action="upload"  id="form" method="post"  enctype="multipart/form-data">
-            <div class="id">
+            {# 下面.id设置为display：none， 不显示给用户，为了方便把_id一块json格式传给后台 #}
+            <div class="id" style="display:none;">
                 <input type="text" name="_id" value={{article._id}}>
             </div>
             <div class="title">

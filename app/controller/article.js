@@ -90,7 +90,7 @@ class Articletroller extends Controller {
     //     this.ctx.body = '<h2>文章保存成功！<h2/>';
     // }
 
-    // 上传单个文件
+    // 结束含有或者不含file的form表单的post个文件
     /**
      * @summary 上传单个文件
      * @description 上传单个文件
