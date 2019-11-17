@@ -6,7 +6,7 @@
 module.exports = app => {
     const { router, controller } = app;
     // auth中间件验证用户是否登录
-    const auth = app.middleware.auth({});
+    const login = app.middleware.login({});
     // admin中间件验证用户是否登录且具有管理权限
     const admin = app.middleware.admin({});
     // 挂载第三方鉴权路由
@@ -24,11 +24,13 @@ module.exports = app => {
     router.get('/picSnip', controller.news.newsPicSnip);
     router.get('/news', controller.news.news);
     router.get('/article', controller.article.showArticle);
-    // 下面路由需要鉴权
-    router.get('/logout', auth, controller.user.logout);
-    router.get('/articleList', auth, controller.article.articleListPage);
-    router.get('/userList', auth, controller.user.userListPage);
-    router.get('/editArticlePage', auth, controller.article.editAritclePage);
-    router.post('/comment', auth, controller.comment.create);
+    // 下面路由需要login鉴权
+    router.get('/logout', login, controller.user.logout);
+    router.get('/articleList', login, controller.article.articleListPage);
+    router.get('/userList', login, controller.user.userListPage);
+    router.get('/editArticlePage', login, controller.article.editAritclePage);
+    router.get('/comment', login, controller.comment.fetch);
+    router.post('/comment', login, controller.comment.create);
+    // 下面路由需要admin鉴权
     router.post('/upload', admin, controller.article.create);
 };
