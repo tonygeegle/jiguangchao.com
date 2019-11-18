@@ -7,6 +7,7 @@ module.exports = app => {
         // parent_id 指向文章或者另一个评论
         parent_id: String,
         user_id: String,
+        user_name: String,
         user_photo: String,
         body: String,
         hidden: Boolean,
@@ -16,5 +17,6 @@ module.exports = app => {
         timestamps: true
     });
     const Comment = mongoose.model("Comment", CommentSchema);
+
     return Comment;
 }

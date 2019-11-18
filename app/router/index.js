@@ -24,12 +24,12 @@ module.exports = app => {
     router.get('/picSnip', controller.news.newsPicSnip);
     router.get('/news', controller.news.news);
     router.get('/article', controller.article.showArticle);
+    router.get('/comment', controller.comment.fetch);
     // 下面路由需要login鉴权
     router.get('/logout', login, controller.user.logout);
     router.get('/articleList', login, controller.article.articleListPage);
     router.get('/userList', login, controller.user.userListPage);
     router.get('/editArticlePage', login, controller.article.editAritclePage);
-    router.get('/comment', login, controller.comment.fetch);
     router.post('/comment', login, controller.comment.create);
     // 下面路由需要admin鉴权
     router.post('/upload', admin, controller.article.create);

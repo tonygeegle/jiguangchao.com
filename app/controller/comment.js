@@ -12,7 +12,7 @@ class CommentController extends Controller {
             // 校验字段
             // ............
             // 补充user信息，形成完整的obj
-            const commentObj = {...commentPartial, 'user_id': user.id, 'user_photo': user.photo }
+            const commentObj = {...commentPartial, 'user_id': user.id, 'user_name': user.displayName, 'user_photo': user.photo }
             await this.ctx.model.Comment.insertMany([commentObj], function(err, res) {
                 console.log("insert comment->", err, res);
             });
@@ -35,7 +35,7 @@ class CommentController extends Controller {
                 delete query[key];
             }
         }
-        console.log(query);
+        // console.log(query);
 
         try {
             // 根据条件组合{ _id, parent_id, user_id } find 记录
