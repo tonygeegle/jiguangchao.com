@@ -33,4 +33,5 @@ module.exports = app => {
     router.post('/comment', login, controller.comment.create);
     // 下面路由需要admin鉴权
     router.post('/upload', admin, controller.article.create);
+    router.get('/deleteUser', admin, controller.user.delete);
 };

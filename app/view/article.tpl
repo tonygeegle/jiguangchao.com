@@ -34,7 +34,7 @@
     <div class="comment-input">
         <div class="avatar">
             {% if user %}
-            <img src="{{user.photo}}" alt="img" width="30" height="30"> {% else %}
+            <img src="{{user.photo}}" alt="img" width="50" height="50"> {% else %}
             <i class="fa fa-github" style="font-size:2.5em"></i> {% endif %}
         </div>
         <form action="xxx" id="comment" method="post" enctype="application/x-www-form-urlencoded">
@@ -85,7 +85,7 @@
     <div id="commentList">
         <div id="comment-item-template" class="comment-item" style="display:none;">
             <div class="avatar">
-                <img src="" alt="img" width="30" height="30">
+                <img src="" alt="img" width="50" height="50">
             </div>
             <div class="displayName">
                 displayName
@@ -97,7 +97,7 @@
                 createdAt
             </div>
             <div class="meta">
-                meta
+                <i class="fa fa-thumbs-o-up" style="font-size:22px"></i>&nbsp<span>meta</span>
             </div>
         </div>
     </div>
@@ -134,7 +134,7 @@
                 newItem.getElementsByClassName('displayName')[0].innerText = comment.user_name;
                 time_str = new Date(comment.createdAt).Format('MM-dd hh:mm');
                 newItem.getElementsByClassName('createdAt')[0].innerText = time_str;
-                newItem.getElementsByClassName('meta')[0].innerText = comment.favs;
+                newItem.getElementsByTagName('span')[0].innerText = comment.favs;
                 newItem.getElementsByTagName('img')[0].src = comment.user_photo;
                 fragment.appendChild(newItem);
             });

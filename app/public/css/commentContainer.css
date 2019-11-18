@@ -10,10 +10,13 @@
 }
 
 .comment-input .avatar {
-    border-radius: 20%;
     /* margin: 0; */
     grid-column: 1 / 2;
     place-self: start end;
+}
+
+.comment-input .avatar img {
+    border-radius: 20%;
 }
 
 .comment-input form {
@@ -59,6 +62,10 @@
     /* margin: 0; */
     grid-column: 1 / 2;
     place-self: start center;
+}
+
+.comment-item .avatar img {
+    border-radius: 20%;
 }
 
 .comment-item .displayName {

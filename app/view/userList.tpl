@@ -29,7 +29,7 @@
                     <td>{{item.provider}}</td>
                     <td>{{item.grade}}</td>
                     <td>{{helper.simpleTime(item.createdAt)}}</td>
-                    <td> <a href="editUserPage?id={{item._id}}">修改</a> <a href="#">删除</a></td>
+                    <td> <a href="#">修改</a> <a href="deleteUser?id={{item._id}}">删除</a></td>
                 </tr>
                 {% set count = count + 1%}
             {% endfor %}

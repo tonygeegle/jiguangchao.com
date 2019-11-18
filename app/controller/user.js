@@ -15,11 +15,18 @@ class UserController extends Controller {
         await this.ctx.render('userList.tpl', { users, user });
     }
 
-
     async logout() {
         const ctx = this.ctx;
         ctx.logout();
         ctx.redirect(ctx.get('referer') || '/');
+    }
+
+    async delete() {
+        const ctx = this.ctx;
+        const _id = ctx.query.id;
+        ctx.body = await ctx.model.User.deleteOne({ _id }, function(err) {
+            if (err) console.log(err);
+        });
     }
 }
 
