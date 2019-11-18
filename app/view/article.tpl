@@ -3,7 +3,6 @@
 <link rel="stylesheet" href="public/css/commentContainer.css">
 <link rel="stylesheet" href="public/css/articleContainer.css">
 <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/styles/vs2015.min.css">
-<script src="https://unpkg.com/axios@0.19.0/dist/axios.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/highlight.min.js"></script>
 <script>
     hljs.initHighlightingOnLoad();
@@ -46,6 +45,7 @@
                 <input type="button" onclick="commentOnclick()" value="提交">
             </div>
         </form>
+        <script src="https://unpkg.com/axios@0.19.0/dist/axios.min.js"></script>
         <script>
             // var commentForm = document.getElementById('comment');
             var parent_id_ele = document.getElementById('parent_id');
@@ -53,20 +53,19 @@
             var parent_id = parent_id_ele.value;
 
             function commentOnclick() {
+                //每次点击获取最新的body_ele.value 
                 body = body_ele.value;
-                console.log({
-                    parent_id,
-                    body
-                });
                 if (!!parent_id && !!body) {
                     axios.post('/comment', {
                             parent_id,
                             body
                         })
                         .then(function(response) {
-                            alert("留言提交成功！");
+                            alert("留言提交成功！");              
+                            const {data:{newComments}} = response;
+                            console.log('提交后返回的新的comment',newComments);
                             // 刷新下方留言列表
-                            createCommentList();
+                            createCommentList(newComments);
                         })
                         .catch(function(error) {
                             alert("留言提交失败！message：" + error.message);
@@ -117,11 +116,15 @@
             }
         }
 
-        async function createCommentList() {
-            // 异步获取评论内容
-            const {
-                data: comments
-            } = await getComment();
+        async function createCommentList(comments = []) {
+            // 如果参数是空数组，则异步获所有取评论内容
+            if (!comments.length) {
+                const {
+                    data
+                } = await getComment();
+                comments = data;
+            }
+            
             console.log(comments);
             let newItem = null;
             const fragment = document.createDocumentFragment();

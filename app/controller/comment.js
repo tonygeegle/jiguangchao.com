@@ -12,12 +12,35 @@ class CommentController extends Controller {
             // 校验字段
             // ............
             // 补充user信息，形成完整的obj
-            const commentObj = {...commentPartial, 'user_id': user.id, 'user_name': user.displayName, 'user_photo': user.photo }
-            await this.ctx.model.Comment.insertMany([commentObj], function(err, res) {
-                console.log("insert comment->", err, res);
+            let newComment = null;
+            const commentObj = {...commentPartial, 'user_id': user.id, 'user_name': user.displayName, 'user_photo': user.photo };
+            // 方案:3   成功
+            newComment = await new Promise(resolve => {
+                this.ctx.model.Comment.insertMany([commentObj], (err, res) => {
+                    resolve(res);
+                });
             });
+            // 方案:1  无效
+            // 遇到了异步的问题，用了上面的解决方案可以了，但是还不是很明白。以后再说。
+            // await this.ctx.model.Comment.insertMany([commentObj], (err, res) => {
+            //     console.log("1. insert comment->", err, res);
+            //     newComment = res;
+            // });
+            // console.log('2. newComment--->', newComment);
+            // 方案:2  无效
+            // Make a request for a user with a given ID
+            // this.ctx.model.Comment.insertMany([commentObj])
+            //     .then(function(res) {
+            //         // handle success
+            //         newComment = res;
+            //     })
+            //     .catch(function(error) {
+            //         // handle error
+            //         console.log(error);
+            //     })
+            // console.log('2. newComment--->', newComment);
             // 设置body直接为一个对象，则response就自动设置为json
-            ctx.body = { code: 200, message: 'ok' };
+            ctx.body = { code: 200, message: 'ok', newComment };
         } catch (error) {
             ctx.status = 500;
             ctx.body = { code: 500, message: 'error' };
