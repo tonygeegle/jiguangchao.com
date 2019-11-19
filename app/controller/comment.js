@@ -1,21 +1,26 @@
 'use strict';
 
 const Controller = require('egg').Controller;
+const assert = require('assert');
 
 class CommentController extends Controller {
     async create() {
         const { ctx } = this
         const user = this.ctx.user;
+
         // json格式
         const commentPartial = this.ctx.request.body;
         try {
             // 校验字段
-            // ............
+            assert(user, '请先登录！');
+            console.log(user);
+
+            // 这里定义为数组是因为insertMany返回数组
+            let newComments = [];
             // 补充user信息，形成完整的obj
-            let newComment = null;
             const commentObj = {...commentPartial, 'user_id': user.id, 'user_name': user.displayName, 'user_photo': user.photo };
             // 方案:3   成功
-            newComment = await new Promise(resolve => {
+            newComments = await new Promise(resolve => {
                 this.ctx.model.Comment.insertMany([commentObj], (err, res) => {
                     resolve(res);
                 });
@@ -40,10 +45,10 @@ class CommentController extends Controller {
             //     })
             // console.log('2. newComment--->', newComment);
             // 设置body直接为一个对象，则response就自动设置为json
-            ctx.body = { code: 200, message: 'ok', newComment };
+            ctx.body = { code: 200, message: 'ok', newComments };
         } catch (error) {
             ctx.status = 500;
-            ctx.body = { code: 500, message: 'error' };
+            ctx.body = { code: 500, message: error };
         }
     }
 
