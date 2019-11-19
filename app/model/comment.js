@@ -17,6 +17,10 @@ module.exports = app => {
         timestamps: true
     });
     const Comment = mongoose.model("Comment", CommentSchema);
-
+    async function testdata() {
+        await Comment.deleteMany();
+        console.log('插入数据成功');
+    }
+    testdata();
     return Comment;
 }
