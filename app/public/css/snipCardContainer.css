@@ -54,3 +54,51 @@
     grid-row: 3 / 4;
     text-align: center;
 }
+
+@media only screen and (max-width: 500px) {
+    .snippCard {
+        border-bottom: 1px solid lightgray;
+        border-left: 10px transparent;
+        border-right: 10px transparent;
+        display: grid;
+        width: 92%;
+        grid-template-rows: 1fr 1em;
+        grid-template-columns: 3fr 7fr;
+        /* place-items: center; */
+        text-align: left;
+        padding-bottom: 5px;
+        margin: 0.5em auto 0.5em auto;
+    }
+    .snippCard .img {
+        grid-column: 1 / 2;
+        grid-row: 1 / 2;
+        width: 90%;
+        height: auto;
+        place-self: start start;
+    }
+    .snippCard .title {
+        width: 100%;
+        font: 0.8em sans-serif;
+        grid-column: 2 / 3;
+        grid-row: 1 / 2;
+    }
+    .snippCard .digest {
+        visibility: hidden;
+    }
+    .snippCard .timedesc {
+        width: 88%;
+        color: grey;
+        font-size: 0.6em;
+        grid-column: 2 / 3;
+        grid-row: 2 / 3;
+        text-align: center;
+    }
+    .snippCard .meta {
+        width: 100%;
+        color: grey;
+        font-size: 0.6em;
+        grid-column: 1 / 2;
+        grid-row: 2 / 3;
+        text-align: center;
+    }
+}

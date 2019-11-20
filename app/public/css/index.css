@@ -21,13 +21,18 @@ body {
 
 @media only screen and (max-width: 500px) {
     #mainContainer {
-        display: grid;
-        /* 使用auto总是出现宽带不正常，必须使用100% ！*/
-        /* grid-template-columns: auto; */
-        grid-template-columns: 100%;
-        grid-template-rows: repeat(4, auto);
-        grid-template-areas: "header" " sidebar" "main" "footer";
-        gap: 5px;
+        display: block;
+        width: 100%;
+    }
+    .sidebar {
+        display: none;
+    }
+    .footer {
+        font: 0.5em sans-serif;
+    }
+    .naviBar a {
+        width: auto;
+        transform: scale(0.7);
     }
 }
 
@@ -66,18 +71,14 @@ body {
 }
 
 .naviBar {
-    display: grid;
-    /* font-size: 1em; */
-    grid-template-rows: 50px;
-    /* 这里没有设置 colum，是一个column，还是 自动多个呢？ */
-    /* grid-template-columns: repeat(24, 60px); */
+    /* display: flex; */
+    height: 50px;
     background-color: #333;
-    place-items: center center;
 }
 
 .naviBar a {
     display: block;
-    width: 80px;
+    float: left;
     line-height: 50px;
     color: white;
     text-align: center;
@@ -91,8 +92,7 @@ body {
 
 .naviBar .endOfBar {
     /* 设置一个比较大的数，把元素放到最后 */
-    grid-column-end: 19;
-    width: auto;
+    float: right;
     padding: 0 0.5em;
 }
 

@@ -18,7 +18,7 @@
                     </a>
                 </div>
                 <div class="title">
-                    <h3>{{ item.title }}</h3>
+                    {{ item.title }}
                 </div>
                 <div class="digest">
                     {{ item.summary }}
