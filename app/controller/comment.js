@@ -12,9 +12,7 @@ class CommentController extends Controller {
         const commentPartial = this.ctx.request.body;
         try {
             // 校验字段
-            assert(user, '请先登录！');
-            console.log(user);
-
+            //....
             // 这里定义为数组是因为insertMany返回数组
             let newComments = [];
             // 补充user信息，形成完整的obj
@@ -54,9 +52,8 @@ class CommentController extends Controller {
 
     async fetch() {
         const { ctx } = this
-        const user = this.ctx.user;
         // const { _id, parent_id, user_id } = this.ctx.query;
-        const query = this.ctx.query;
+        const query = ctx.query;
         // 去除query中的空键值
         for (var key in query) {
             if (!query[key]) {
@@ -70,6 +67,20 @@ class CommentController extends Controller {
             const comments = await this.ctx.model.Comment.find(query);
             // 设置body直接为一个对象，则response就自动设置为json
             ctx.body = comments;
+        } catch (error) {
+            ctx.status = 500;
+            ctx.body = { code: 500, message: 'error' };
+        }
+    }
+
+    async update() {
+        const { ctx } = this
+        const { _id, favs } = ctx.request.body;
+        try {
+            // 根据条件组合{ _id, parent_id, user_id } find 记录
+            await this.ctx.model.Comment.update({ _id }, { favs });
+            // 设置body直接为一个对象，则response就自动设置为json
+            ctx.body = { code: 200, message: 'ok' };;
         } catch (error) {
             ctx.status = 500;
             ctx.body = { code: 500, message: 'error' };

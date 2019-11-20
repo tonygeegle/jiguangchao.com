@@ -19,8 +19,8 @@ module.exports = app => {
     const Comment = mongoose.model("Comment", CommentSchema);
     async function testdata() {
         await Comment.deleteMany();
-        console.log('插入数据成功');
+        console.log('删除留言成功');
     }
-    testdata();
+    // testdata();
     return Comment;
 }

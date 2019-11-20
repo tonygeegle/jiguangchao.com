@@ -48,11 +48,16 @@
         <script src="https://unpkg.com/axios@0.19.0/dist/axios.min.js"></script>
         <script>
             // var commentForm = document.getElementById('comment');
+            var isUserLogin = document.getElementById('user-display-name');
             var parent_id_ele = document.getElementById('parent_id');
             var body_ele = document.getElementById('comment_body');
             var parent_id = parent_id_ele.value;
-
+            
             function commentOnclick() {
+                if (!isUserLogin) {
+                    alert("大哥，请先登录一下！");
+                    return;
+                }
                 //每次点击获取最新的body_ele.value 
                 body = body_ele.value;
                 if (!!parent_id && !!body) {
@@ -96,13 +101,26 @@
                 createdAt
             </div>
             <div class="meta">
-                <i class="fa fa-thumbs-o-up" style="font-size:22px"></i>&nbsp<span>meta</span>
+                <i class="fa fa-thumbs-o-up" style="font-size:22px" onclick="metaOnclick(this)"></i>&nbsp<span class="meta-fav">meta</span>
             </div>
         </div>
     </div>
     <script>
+        // 用户点击留言右下的大拇指图标触发
+        function metaOnclick(meta) {
+            if (meta.classList.contains('fa-thumbs-o-up')) {
+                _id = meta.parentElement.parentElement.id;
+                meta_fav = meta.parentElement.getElementsByTagName('span')[0]
+                num = parseInt(meta_fav.innerText);
+                meta_fav.innerText = ++num;
+                meta.classList.replace('fa-thumbs-o-up', 'fa-thumbs-up');
+                axios.put('/comment', {_id, favs: num});
+            }
+        }
+
         var template = document.getElementById('comment-item-template');
         var commentListContainer = document.getElementById('commentList');
+        // getComment：后台获取留言的json数据
         async function getComment(params = {
             parent_id
         }) {
@@ -115,7 +133,7 @@
                 console.error(error);
             }
         }
-
+        // 把留言的json数据生成真正的dom
         async function createCommentList(comments = []) {
             // 如果参数是空数组，则异步获所有取评论内容
             if (!comments.length) {

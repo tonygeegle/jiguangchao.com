@@ -24,7 +24,7 @@
                 <div class="dropdown">
                     <a class="userinfo">
                         <img src="{{ user.photo }}" width="25" height="25">
-                        <span> {{ user.displayName }}</span>
+                        <span id ="user-display-name"> {{ user.displayName }}</span>
                     </a>
                     <div class="dropdown-content">
                         <a href="/articleList">文章管理</a>

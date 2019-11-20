@@ -31,6 +31,7 @@ module.exports = app => {
     router.get('/userList', login, controller.user.userListPage);
     router.get('/editArticlePage', login, controller.article.editAritclePage);
     router.post('/comment', login, controller.comment.create);
+    router.put('/comment', login, controller.comment.update);
     // 下面路由需要admin鉴权
     router.post('/upload', admin, controller.article.create);
     router.get('/deleteUser', admin, controller.user.delete);

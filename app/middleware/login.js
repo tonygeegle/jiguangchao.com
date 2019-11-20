@@ -5,6 +5,8 @@ module.exports = () => {
             // console.log('in login', JSON.stringify(ctx.user, null, 2));
             await next();
         } else {
+            // ctx.status = 401;
+            // ctx.body = { code: 401, message: '没有登录！' };
             ctx.redirect('/loginPage');
         }
     }
