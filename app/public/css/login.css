@@ -31,3 +31,9 @@
     background: green;
     transform: scale(1.2)
 }
+
+@media only screen and (max-width: 500px) {
+    .login {
+        margin: 0 auto 1em auto;
+    }
+}

@@ -19,23 +19,6 @@ body {
     gap: 5px;
 }
 
-@media only screen and (max-width: 500px) {
-    #mainContainer {
-        display: block;
-        width: 100%;
-    }
-    .sidebar {
-        display: none;
-    }
-    .footer {
-        font: 0.5em sans-serif;
-    }
-    .naviBar a {
-        width: auto;
-        transform: scale(0.7);
-    }
-}
-
 .item {
     /* font-size: 1em; */
     /* text-align: center; */
@@ -73,17 +56,41 @@ body {
 .naviBar {
     /* display: flex; */
     height: 50px;
+    padding: 0 1em;
     background-color: #333;
 }
 
-.naviBar a {
+.naviBar .nav-item {
     display: block;
+    margin: 0 2em;
     float: left;
     line-height: 50px;
     color: white;
     text-align: center;
     /* padding: 14px 16px; */
     text-decoration: none;
+}
+
+@media only screen and (max-width: 500px) {
+    #mainContainer {
+        display: block;
+        width: 100%;
+    }
+    .sidebar {
+        display: none;
+    }
+    .footer {
+        font: 0.6em sans-serif;
+        line-height: 150px;
+    }
+    .naviBar {
+        padding: 0 0.5em;
+    }
+    .naviBar .nav-item {
+        margin: 0;
+        width: auto;
+        transform: scale(0.7);
+    }
 }
 
 .naviBar a:hover {
@@ -162,4 +169,14 @@ body {
 #displayType .active {
     color: white;
     background: green;
+}
+
+@media only screen and (max-width: 500px) {
+    #displayType {
+        height: 2.5em;
+        line-height: 2.5em;
+        margin-top: 5px;
+        padding-left: 2em;
+        font-size: 0.6em;
+    }
 }

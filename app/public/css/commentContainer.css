@@ -27,7 +27,7 @@
 .comment-input textarea {
     border: 1px solid gray;
     /* border-radius: 15%; */
-    width: 80%;
+    width: 94%;
 }
 
 .comment-input input {
@@ -41,7 +41,7 @@
     display: inline-block;
     font-size: 16px;
     cursor: pointer;
-    margin-left: 70%;
+    margin-left: 80%;
     margin-top: 10px;
 }
 
@@ -95,4 +95,22 @@
     color: gray;
     font-size: 75%;
     place-self: end start;
+}
+
+@media only screen and (max-width: 500px) {
+    .comment-input,
+    .comment-item {
+        font: 0.8em sans-serif;
+    }
+    .comment-input input {
+        margin-left: 70%;
+    }
+    .comment-input .avatar img,
+    .comment-item .avatar img,
+    .comment-input input {
+        transform: scale(0.7);
+    }
+    .comment-item .fa {
+        transform: scale(0.7) translateY(3px);
+    }
 }

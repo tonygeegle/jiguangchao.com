@@ -15,3 +15,10 @@
     /*控制代码不换行*/
     max-width: 60%;
 }
+
+@media only screen and (max-width: 500px) {
+    .articleContainer {
+        width: 94%;
+        font: 0.8em sans-serif;
+    }
+}
