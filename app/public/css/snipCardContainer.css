@@ -1,8 +1,10 @@
 .snippCardContainer {
-    background: slategray;
+    background: rgb(134, 147, 160);
 }
 
 .snippCard {
+    text-decoration: none;
+    color: black;
     border-bottom: 1px solid lightgray;
     border-left: 10px transparent;
     border-right: 10px transparent;

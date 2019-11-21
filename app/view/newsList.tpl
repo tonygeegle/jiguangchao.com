@@ -7,15 +7,15 @@
 {% block main %}
     <div class="snipCardContainer">
         {% for item in newsList %}
-            <div class="snippCard">
+            <a class="snippCard" href="news?post_id={{ item.post_id}}">
                 <div class="img">
-                    <a href="news?post_id={{ item.post_id}}">
+                    
                         {% if item.cover %}
                             <img src="{{ item.cover }}"  width="300" height="200">
                         {% else %}
                             <img src="https://www.runoob.com/wp-content/uploads/2016/04/img_forest.jpg" alt="Forest" width="300" height="200">
                         {% endif %}              
-                    </a>
+                    
                 </div>
                 <div class="title">
                     {{ item.title }}
@@ -27,7 +27,7 @@
                     {{ item.author_name }}&nbsp&nbsp{{ helper.articleTime(item.published_at) }}
                 </div>
                 <div class="meta">来源:{{ item.from_id }}&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp阅读:{{ item.views_count }}</div>
-            </div>
+            </a>
         {% endfor %}
     </div>
 {% endblock %}

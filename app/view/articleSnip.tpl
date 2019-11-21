@@ -7,15 +7,13 @@
 {% block main %}
     <div class="snipCardContainer">
         {% for item in articles %}
-            <div class="snippCard">
+            <a class="snippCard" href="article?id={{ item._id }}">
                 <div class="img">
-                    <a href="article?id={{ item._id }}">
                         {% if item.img %}
                             <img src="{{ item.img }}"  width="300" height="200">
                         {% else %}
                             <img src="/public/uploads/0646a060-0788-11ea-8da7-6d9c3eaeb94c.jpg" alt="default img" width="300" height="200">
                         {% endif %}              
-                    </a>
                 </div>
                 
                 <div class="title">
@@ -28,7 +26,7 @@
                    {{ item.author }}&nbsp&nbsp{{ helper.articleTime(item.createdAt) }}
                 </div>
                 <div class="meta">阅读:{{ item.meta.visits }}&nbsp&nbsp喜欢:{{ item.meta.favs }}</div>
-            </div>
+            </a>
         {% endfor %}
     </div>
 {% endblock %}
