@@ -8,20 +8,20 @@
     <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="public/css/index.css">
-    <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.css"> 
-    {% endblock %}
+    <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.css"> {% endblock %}
 </head>
 
 <body>
     <div id="mainContainer">
+
         <div class="hearder item">
             {% block header %}
             <div class="naviBar">
-                <a href="/"><i class="fa fa-home" style="font-size:24px"></i>&nbsp主页</a>
-                <a href="/news"><i class="fa fa-newspaper-o" style="font-size:20px"></i>&nbsp新闻</a>
-                <a href="/articleSnip"><i class="fa fa-html5" style="font-size:24px"></i>&nbsp原创</a> 
+                <a class="nav-item" href="/"><i class="fa fa-home" style="font-size:24px"></i>&nbsp主页</a>
+                <a class="nav-item" href="/news"><i class="fa fa-newspaper-o" style="font-size:20px"></i>&nbsp新闻</a>
+                <a class="nav-item" href="/articleSnip"><i class="fa fa-html5" style="font-size:24px"></i>&nbsp原创</a> 
                 {% if user %}
-                <div class="dropdown">
+                <div class="nav-item dropdown">
                     <a class="userinfo">
                         <img src="{{ user.photo }}" width="25" height="25">
                         <span id ="user-display-name"> {{ user.displayName }}</span>
@@ -34,10 +34,10 @@
                     </div>
                 </div>
                 {% else %}
-                <a href="/loginPage"><i class="fa fa-sign-in" style="font-size:22px"></i>&nbsp 登陆</a> 
+                <a class="nav-item" href="/loginPage"><i class="fa fa-sign-in" style="font-size:22px"></i>&nbsp 登陆</a> 
                 {% endif %}
 
-                <a class="endOfBar" href="/about"><i class="fa fa-question-circle-o" style="font-size:22px"></i>&nbsp Me</a> {# <a class="endOfBar" href="#">关于本站&nbsp<i class="fa fa-question-circle-o" style="font-size:22px"></i></a> #}
+                <a class="nav-item endOfBar" href="/about"><i class="fa fa-question-circle-o" style="font-size:22px"></i>&nbsp Me</a> {# <a class="endOfBar" href="#">关于本站&nbsp<i class="fa fa-question-circle-o" style="font-size:22px"></i></a> #}
             </div>
             {% endblock %}
         </div>
@@ -81,7 +81,7 @@
             {% block main %} {# 这里将会替换成子模板的内容 #} {% endblock %}
         </div>
         {% block footer %}
-        <div class="footer item">Copyright @ 2019 www.jiguangchao.com 鲁ICP备19013735号-1</div>
+        <div class="footer item">Copyright @ 2019 www.jiguangchao.com <a href="http://www.beian.miit.gov.cn" target="_blank">鲁ICP备19013735号-1</a></div>
         {% endblock %}
     </div>
 
