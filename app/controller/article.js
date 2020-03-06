@@ -111,6 +111,7 @@ class Articletroller extends Controller {
         // 要通过 ctx.getFileStream 便捷的获取到用户上传的文件，需要满足两个条件：
         // 只支持上传一个文件。
         // 上传文件必须在所有其他的 fields 后面，否则在拿到文件流时可能还获取不到 fields。
+        // https://koajs.com/#context
         // If there is no request body, null is returned. 
         // If there is no content type, false is returned. 
         // Otherwise, it returns the first type that matches.
